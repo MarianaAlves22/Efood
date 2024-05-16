@@ -34,7 +34,6 @@ export const Image = styled.div<Props>`
 export const Text = styled.h2`
   width: 539px;
   height: 84px;
-
   font-size: 36px;
   font-weight: 900;
   line-height: 42.19px;
