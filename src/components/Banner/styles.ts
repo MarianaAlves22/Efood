@@ -2,11 +2,21 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 
 export const BannerContainer = styled.div`
-  width: 100%;
   height: 280px;
-  display: block;
+  position: relative;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 1025px) {
+      max-width: 72%;
+      margin: auto;
+    }
+  }
 
   h3 {
     font-size: 32px;

@@ -11,10 +11,8 @@ export const CardRestaurant = styled.div`
 export const CardContainer = styled.div``
 
 export const Image = styled.div`
-  background-repeat: no-repeat;
   width: 472px;
   height: 217px;
-  background-size: 100% 100%; /* Aqui estou garantindo que a imagem ocupe todo o espaço disponível */
 `
 
 export const ContainerDescritivo = styled.div`

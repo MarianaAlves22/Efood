@@ -15,11 +15,17 @@ export const Image = styled.div<Props>`
   background-size: cover;
 
   .container {
+    max-width: 1024px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 40px 171px;
+
+    @media (min-width: 1025px) {
+      max-width: 72%;
+      margin: auto;
+    }
   }
 
   .imageLink {
