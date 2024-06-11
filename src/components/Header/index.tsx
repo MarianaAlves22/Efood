@@ -1,49 +1,25 @@
-import { Link, useLocation } from 'react-router-dom'
-import fundo from '../../assets/images/fundo.png'
 import logo from '../../assets/images/logo.png'
-import {
-  Carrinho,
-  HeaderBar,
-  HeaderContainer,
-  Image,
-  Logo,
-  Text
-} from './styles'
+import { Branding, LinkRestaurantes, TextCart, HeaderStyle } from './styles'
+import { open } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 
-export type Props = {
-  background: 'light' | 'dark'
-}
-
-const Header = ({ background }: Props) => {
-  const location = useLocation()
-
-  const titleText =
-    location.pathname === '/Perfil'
-      ? ''
-      : 'Viva experiências gastronômicas no conforto da sua casa'
-
-  const titleRestaurante = location.pathname === '/Perfil' ? 'Restaurantes' : ''
-  const titleCarrinho =
-    location.pathname === '/Perfil' ? '0 produto(s) no carrinho' : ''
-
+const Header = () => {
+  const dispatch = useDispatch()
+  const { pedido } = useSelector((state: RootReducer) => state.cart)
+  const openCart = () => {
+    dispatch(open())
+  }
   return (
-    <HeaderBar className="container">
-      <Image
-        style={{ backgroundImage: `url(${fundo})` }}
-        background={background}
-      >
-        <div className="container">
-          <HeaderContainer>
-            <Logo>{titleRestaurante}</Logo>
-            <Link to="/">
-              <img className="imageLink" src={logo} alt="EFOOD logo" />
-            </Link>
-            <Carrinho>{titleCarrinho}</Carrinho>
-          </HeaderContainer>
-          <Text>{titleText}</Text>
-        </div>
-      </Image>
-    </HeaderBar>
+    <HeaderStyle>
+      <div className="container">
+        <LinkRestaurantes href="/">Restaurantes</LinkRestaurantes>
+        <Branding src={logo} alt="Logo do restaurante" />
+        <TextCart onClick={openCart}>
+          {pedido.length} produto(s) no carrinho
+        </TextCart>
+      </div>
+    </HeaderStyle>
   )
 }
 

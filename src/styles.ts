@@ -1,11 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const cores = {
-  text: '#E66767',
-  background: '#FFF8F2',
-  headerFooter: '#FFEBD9',
-  cards: '#FFFFFF',
+  red: '#E66767',
+  lightPink: '#FFF8F2',
+  pink: '#FFEBD9',
+  white: '#FFFFFF',
   yellow: '#FFB930'
+}
+
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '821px',
+  mobile: '430px',
+  iphone11: '414px'
 }
 
 export const GlobalCss = createGlobalStyle`
@@ -18,18 +25,7 @@ export const GlobalCss = createGlobalStyle`
   }
 
   body {
-    background-color: ${cores.background};
-    color: ${cores.text}
-  }
-
-  .container {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-
-    @media (min-width: 1025px) {
-      max-width: 100%;
-      margin: auto;
-    }
+    background-color: ${cores.lightPink};
+    color: ${cores.red}
   }
 `
