@@ -59,6 +59,7 @@ export const Modal = styled.div`
 export const ModalContent = styled.div`
   margin: 0 auto;
   max-width: 1024px;
+  height: 344px;
   background-color: ${cores.red};
   display: flex;
   flex-direction: row;
