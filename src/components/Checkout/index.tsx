@@ -52,7 +52,7 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
     ) {
       dispatch(payment())
     } else {
-      alert('Preencha antes os dados obrigatórios!')
+      alert('Por favor informe o seu endereço!')
     }
   }
   const activeConfirmed = () => {
@@ -65,7 +65,7 @@ const Checkout = ({ checkoutStart = false, priceTotal = 0 }: Props) => {
     ) {
       dispatch(confirmed())
     } else {
-      alert('Preencha antes os dados obrigatórios!')
+      alert('Preencha os dados obrigatórios para finalizar a compra!')
     }
     console.log(pedido)
   }
